@@ -1,0 +1,39 @@
+# Ignore macOS system files
+.DS_Store
+
+# Ignore Xcode project files
+xcuserdata/
+DerivedData/
+*.xcuserstate
+
+# Ignore build directories
+build/
+Builds/
+
+# Ignore JUCE specific build folders
+/JUCE/Builds/
+
+# Ignore IDE-specific files
+.vscode/
+.idea/
+
+# Ignore OS-specific files
+Thumbs.db
+ehthumbs.db
+
+# Ignore compiled binaries and libraries
+*.o
+*.a
+*.dylib
+*.so
+*.dll
+
+# Ignore log and temporary files
+*.log
+*.bak
+*.swp
+
+# Ignore temporary files created by the IDE
+*.iml
+*.xcworkspace
+
