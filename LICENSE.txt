@@ -1,0 +1,7 @@
+This project is licensed under the GNU General Public License v3.0 (GPL-3.0).
+
+You can find the full text of the license at:
+https://www.gnu.org/licenses/gpl-3.0.html
+
+The JUCE library used in this project is also licensed under the GPL-3.0.
+
