@@ -10,7 +10,7 @@
 #include "PluginEditor.h"
 
 //==============================================================================
-AsLoudAsIamAudioProcessor::AsLoudAsIamAudioProcessor()
+AsLoudAsYouAreAudioProcessor::AsLoudAsYouAreAudioProcessor()
 #ifndef JucePlugin_PreferredChannelConfigurations
     : AudioProcessor (BusesProperties()
         #if ! JucePlugin_IsMidiEffect
@@ -26,17 +26,17 @@ AsLoudAsIamAudioProcessor::AsLoudAsIamAudioProcessor()
 {
 }
 
-AsLoudAsIamAudioProcessor::~AsLoudAsIamAudioProcessor()
+AsLoudAsYouAreAudioProcessor::~AsLoudAsYouAreAudioProcessor()
 {
 }
 
 //==============================================================================
-const juce::String AsLoudAsIamAudioProcessor::getName() const
+const juce::String AsLoudAsYouAreAudioProcessor::getName() const
 {
     return JucePlugin_Name;
 }
 
-bool AsLoudAsIamAudioProcessor::acceptsMidi() const
+bool AsLoudAsYouAreAudioProcessor::acceptsMidi() const
 {
    #if JucePlugin_WantsMidiInput
     return true;
@@ -45,7 +45,7 @@ bool AsLoudAsIamAudioProcessor::acceptsMidi() const
    #endif
 }
 
-bool AsLoudAsIamAudioProcessor::producesMidi() const
+bool AsLoudAsYouAreAudioProcessor::producesMidi() const
 {
    #if JucePlugin_ProducesMidiOutput
     return true;
@@ -54,7 +54,7 @@ bool AsLoudAsIamAudioProcessor::producesMidi() const
    #endif
 }
 
-bool AsLoudAsIamAudioProcessor::isMidiEffect() const
+bool AsLoudAsYouAreAudioProcessor::isMidiEffect() const
 {
    #if JucePlugin_IsMidiEffect
     return true;
@@ -63,50 +63,50 @@ bool AsLoudAsIamAudioProcessor::isMidiEffect() const
    #endif
 }
 
-double AsLoudAsIamAudioProcessor::getTailLengthSeconds() const
+double AsLoudAsYouAreAudioProcessor::getTailLengthSeconds() const
 {
     return 0.0;
 }
 
-int AsLoudAsIamAudioProcessor::getNumPrograms()
+int AsLoudAsYouAreAudioProcessor::getNumPrograms()
 {
     return 1;   // NB: some hosts don't cope very well if you tell them there are 0 programs,
                 // so this should be at least 1, even if you're not really implementing programs.
 }
 
-int AsLoudAsIamAudioProcessor::getCurrentProgram()
+int AsLoudAsYouAreAudioProcessor::getCurrentProgram()
 {
     return 0;
 }
 
-void AsLoudAsIamAudioProcessor::setCurrentProgram (int index)
+void AsLoudAsYouAreAudioProcessor::setCurrentProgram (int index)
 {
 }
 
-const juce::String AsLoudAsIamAudioProcessor::getProgramName (int index)
+const juce::String AsLoudAsYouAreAudioProcessor::getProgramName (int index)
 {
     return {};
 }
 
-void AsLoudAsIamAudioProcessor::changeProgramName (int index, const juce::String& newName)
+void AsLoudAsYouAreAudioProcessor::changeProgramName (int index, const juce::String& newName)
 {
 }
 
 //==============================================================================
-void AsLoudAsIamAudioProcessor::prepareToPlay (double sampleRate, int samplesPerBlock)
+void AsLoudAsYouAreAudioProcessor::prepareToPlay (double sampleRate, int samplesPerBlock)
 {
     // Use this method as the place to do any pre-playback
     // initialisation that you need..
 }
 
-void AsLoudAsIamAudioProcessor::releaseResources()
+void AsLoudAsYouAreAudioProcessor::releaseResources()
 {
     // When playback stops, you can use this as an opportunity to free up any
     // spare memory, etc.
 }
 
 #ifndef JucePlugin_PreferredChannelConfigurations
-bool AsLoudAsIamAudioProcessor::isBusesLayoutSupported (const BusesLayout& layouts) const
+bool AsLoudAsYouAreAudioProcessor::isBusesLayoutSupported (const BusesLayout& layouts) const
 {
   #if JucePlugin_IsMidiEffect
     juce::ignoreUnused (layouts);
@@ -131,7 +131,7 @@ bool AsLoudAsIamAudioProcessor::isBusesLayoutSupported (const BusesLayout& layou
 }
 #endif
 
-void AsLoudAsIamAudioProcessor::processBlock (juce::AudioBuffer<float>& buffer, juce::MidiBuffer& midiMessages)
+void AsLoudAsYouAreAudioProcessor::processBlock (juce::AudioBuffer<float>& buffer, juce::MidiBuffer& midiMessages)
 {
     juce::ScopedNoDenormals noDenormals;
     auto totalNumInputChannels  = getTotalNumInputChannels();
@@ -172,7 +172,7 @@ void AsLoudAsIamAudioProcessor::processBlock (juce::AudioBuffer<float>& buffer, 
 }
 
 // Method to calculate the envelope (using RMS or peak detection)
-float AsLoudAsIamAudioProcessor::calculateEnvelope(juce::AudioBuffer<float>& sidechainBuffer)
+float AsLoudAsYouAreAudioProcessor::calculateEnvelope(juce::AudioBuffer<float>& sidechainBuffer)
 {
     float maxLevel = 0.0f;
     for (int channel = 0; channel < sidechainBuffer.getNumChannels(); ++channel)
@@ -183,7 +183,7 @@ float AsLoudAsIamAudioProcessor::calculateEnvelope(juce::AudioBuffer<float>& sid
 }
 
 // Apply the gain follower to the buffer (drum track)
-void AsLoudAsIamAudioProcessor::applyGainFollower(juce::AudioBuffer<float>& buffer, float dynamicLevel)
+void AsLoudAsYouAreAudioProcessor::applyGainFollower(juce::AudioBuffer<float>& buffer, float dynamicLevel)
 {
     for (int channel = 0; channel < buffer.getNumChannels(); ++channel)
     {
@@ -196,25 +196,25 @@ void AsLoudAsIamAudioProcessor::applyGainFollower(juce::AudioBuffer<float>& buff
 }
 
 //==============================================================================
-bool AsLoudAsIamAudioProcessor::hasEditor() const
+bool AsLoudAsYouAreAudioProcessor::hasEditor() const
 {
     return true; // (change this to false if you choose to not supply an editor)
 }
 
-juce::AudioProcessorEditor* AsLoudAsIamAudioProcessor::createEditor()
+juce::AudioProcessorEditor* AsLoudAsYouAreAudioProcessor::createEditor()
 {
-    return new AsLoudAsIamAudioProcessorEditor (*this);
+    return new AsLoudAsYouAreAudioProcessorEditor (*this);
 }
 
 //==============================================================================
-void AsLoudAsIamAudioProcessor::getStateInformation (juce::MemoryBlock& destData)
+void AsLoudAsYouAreAudioProcessor::getStateInformation (juce::MemoryBlock& destData)
 {
     // You should use this method to store your parameters in the memory block.
     // You could do that either as raw data, or use the XML or ValueTree classes
     // as intermediaries to make it easy to save and load complex data.
 }
 
-void AsLoudAsIamAudioProcessor::setStateInformation (const void* data, int sizeInBytes)
+void AsLoudAsYouAreAudioProcessor::setStateInformation (const void* data, int sizeInBytes)
 {
     // You should use this method to restore your parameters from this memory block,
     // whose contents will have been created by the getStateInformation() call.
@@ -224,5 +224,5 @@ void AsLoudAsIamAudioProcessor::setStateInformation (const void* data, int sizeI
 // This creates new instances of the plugin..
 juce::AudioProcessor* JUCE_CALLTYPE createPluginFilter()
 {
-    return new AsLoudAsIamAudioProcessor();
+    return new AsLoudAsYouAreAudioProcessor();
 }

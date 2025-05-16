@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<JUCERPROJECT id="yZ8I6e" name="AsLoudAsIam" projectType="audioplug" useAppConfig="0"
+<JUCERPROJECT id="yZ8I6e" name="AsLoudAsYouAre" projectType="audioplug" useAppConfig="0"
               addUsingNamespaceToJuceHeader="0" jucerFormatVersion="1" companyName="DoJoy.at"
               companyCopyright="(c) DoJoy.at 2025" companyWebsite="https://www.DoJoy.at"
-              companyEmail="guru@dojoy.at" bundleIdentifier="at.dojoy.AsLoudAsIam"
-              pluginFormats="buildAAX,buildAU,buildVST3" aaxIdentifier="at.dojoy.AsLoudAsIam"
+              companyEmail="guru@dojoy.at" bundleIdentifier="at.dojoy.AsLoudAsYouAre"
+              pluginFormats="buildAAX,buildAU,buildVST3" aaxIdentifier="at.dojoy.AsLoudAsYouAre"
               pluginVST3Category="Dynamics" pluginAAXCategory="2" pluginDesc="Sidechain gain-follower">
-  <MAINGROUP id="nVGaYt" name="AsLoudAsIam">
+  <MAINGROUP id="nVGaYt" name="AsLoudAsYouAre">
     <GROUP id="{45044DAF-FA44-EA34-098E-E2442E45FDB1}" name="Source">
       <FILE id="GA8wsP" name="PluginProcessor.cpp" compile="1" resource="0"
             file="Source/PluginProcessor.cpp"/>
@@ -36,8 +36,8 @@
   <EXPORTFORMATS>
     <XCODE_MAC targetFolder="Builds/MacOSX">
       <CONFIGURATIONS>
-        <CONFIGURATION isDebug="1" name="Debug" targetName="AsLoudAsIam"/>
-        <CONFIGURATION isDebug="0" name="Release" targetName="AsLoudAsIam"/>
+        <CONFIGURATION isDebug="1" name="Debug" targetName="AsLoudAsYouAre"/>
+        <CONFIGURATION isDebug="0" name="Release" targetName="AsLoudAsYouAre"/>
       </CONFIGURATIONS>
       <MODULEPATHS>
         <MODULEPATH id="juce_audio_basics" path="../../JUCE/modules"/>

@@ -10,7 +10,7 @@
 #include "PluginEditor.h"
 
 //==============================================================================
-AsLoudAsIamAudioProcessorEditor::AsLoudAsIamAudioProcessorEditor (AsLoudAsIamAudioProcessor& p)
+AsLoudAsYouAreAudioProcessorEditor::AsLoudAsYouAreAudioProcessorEditor (AsLoudAsYouAreAudioProcessor& p)
     : AudioProcessorEditor (&p), audioProcessor (p)
 {
     // Make sure that before the constructor has finished, you've set the
@@ -18,22 +18,28 @@ AsLoudAsIamAudioProcessorEditor::AsLoudAsIamAudioProcessorEditor (AsLoudAsIamAud
     setSize (400, 300);
 }
 
-AsLoudAsIamAudioProcessorEditor::~AsLoudAsIamAudioProcessorEditor()
+AsLoudAsYouAreAudioProcessorEditor::~AsLoudAsYouAreAudioProcessorEditor()
 {
 }
 
 //==============================================================================
-void AsLoudAsIamAudioProcessorEditor::paint (juce::Graphics& g)
+void AsLoudAsYouAreAudioProcessorEditor::paint (juce::Graphics& g)
 {
-    // (Our component is opaque, so we must completely fill the background with a solid colour)
     g.fillAll (getLookAndFeel().findColour (juce::ResizableWindow::backgroundColourId));
 
     g.setColour (juce::Colours::white);
     g.setFont (juce::FontOptions (15.0f));
-    g.drawFittedText ("Hello World!", getLocalBounds(), juce::Justification::centred, 1);
+
+    auto bounds = getLocalBounds().reduced (20); // 20 px Abstand rundherum
+    g.drawFittedText (
+        "Just set the Side Chain to the track/bus/input you want to follow and Be As Loud as You (Side Chain) are. \n\nDoJoy!",
+        bounds,
+        juce::Justification::centred,
+        3 // mehr Zeilen erlauben
+    );
 }
 
-void AsLoudAsIamAudioProcessorEditor::resized()
+void AsLoudAsYouAreAudioProcessorEditor::resized()
 {
     // This is generally where you'll want to lay out the positions of any
     // subcomponents in your editor..

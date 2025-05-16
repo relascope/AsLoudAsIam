@@ -13,12 +13,12 @@
 //==============================================================================
 /**
 */
-class AsLoudAsIamAudioProcessor  : public juce::AudioProcessor
+class AsLoudAsYouAreAudioProcessor  : public juce::AudioProcessor
 {
 public:
     //==============================================================================
-    AsLoudAsIamAudioProcessor();
-    ~AsLoudAsIamAudioProcessor() override;
+    AsLoudAsYouAreAudioProcessor();
+    ~AsLoudAsYouAreAudioProcessor() override;
 
     //==============================================================================
     void prepareToPlay (double sampleRate, int samplesPerBlock) override;
@@ -65,5 +65,5 @@ private:
     void applyGainFollower(juce::AudioBuffer<float>& buffer, float dynamicLevel);
     
     
-    JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (AsLoudAsIamAudioProcessor)
+    JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (AsLoudAsYouAreAudioProcessor)
 };
