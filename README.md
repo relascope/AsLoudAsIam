@@ -7,24 +7,24 @@ by [DoJoy.at](https://dojoy.at)
 ## Features
 - Sidechain gain follower to follow dynamic changes in the sidechain input.
 - Apply gain changes to your audio tracks in real-time.
-- Optimized for use with dynamic guitar and drum tracks.
+- Saves manual drawing of gain automation curves
 
 
 ## Installation
 
-- build youself...
+- build yourself...
 
 
 ## Build 
 
 - checkout code
-- open project in ProJucer
-- select build-system and plugin type (AU, LV2, VST3...)
+- Open the project in ProJucer
+- Select the build system and plugin type (AU, LV2, VST3, etc.).
 - Build
-- deploy based on your DAW
+- Deploy based on your DAW
 
 ## Usage
-- **Insert Plugin to the "Follower" (Slave)
+- **Insert Plugin into the "Follower" (Slave)
 - **Sidechain Input**: Route your main track with the dynamic movements to the **sidechain** input of the plugin.
 - **Dynamic Follow**: The plugin will apply gain changes to the slave track based on the dynamics of the sidechain track.
 
@@ -34,7 +34,4 @@ This project is licensed under the [GPL-3.0 License](https://www.gnu.org/license
 ## About
 For more details, visit my website: [dojoy.at](https://dojoy.at)
 
-## Contact
-- Email: [your_email@example.com]
-- GitHub: [https://github.com/yourusername/AsLoudAsYouAre](https://github.com/yourusername/AsLoudAsYouAre)
 
